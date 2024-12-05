@@ -1,0 +1,146 @@
+body {
+  margin: 0 260px;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.05em;
+  text-align: center;
+  background-image: url(../IMAGES/japon9.jpg);
+  color: white;
+  text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 50px; /* Ajoute de l'espace en bas de la page */
+}
+
+
+h1 {
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff;
+  transition: transform 0.3s ease-in-out; /* Ajout de la transition pour l'effet de grossissement */
+}
+
+img:hover {
+  transform: scale(1.02); /* Grossissement de l'image */
+}
+
+button {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1); /* Ajout de la transition pour l'effet de grossissement */
+}
+
+button:hover {
+  transform: scale(1.02); /* Grossissement du bouton */
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: white; /* Assure que le fond reste blanc */
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 15px;
+  z-index: -1;
+  background: linear-gradient(to right, black, gray, black);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:hover::after {
+  opacity: 0; /* Empêche le noircissement */
+}
+
+.tableau-arrondi {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 80%;
+  border-radius: 15px; /* Ajout de border-radius pour arrondir les coins */
+  overflow: hidden; /* Assure que le contenu ne dépasse pas les coins arrondis */
+  border: 2px solid black; /* Ajout d'une bordure plus visible */
+}
+
+.tableau-arrondi th, .tableau-arrondi td {
+  border: 2px  solid white;
+  padding: 10px;
+  text-align: left;
+}
+
+.tableau-arrondi th {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tableau-arrondi td {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fond-flou {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.texte-centre {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.conteneur-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.conteneur-image p {
+  max-width: 100%;
+  text-align: left;
+}
+
+.video-link {
+  position: relative;
+  display: inline-block;
+}
+
+.video-link .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: url('../IMAGES/youtube.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.video-link:hover .play-icon {
+  opacity: 1;
+}
